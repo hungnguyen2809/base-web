@@ -1,26 +1,30 @@
+import { store } from 'app/store';
+import ErrorBoundary from 'components/ErrorBoundary';
+import Loading from 'components/Loading';
+import AppContainer from 'layouts/AppContainer';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'react-loading-skeleton/dist/skeleton.css';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './App.scss';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ErrorBoundary>
+      <Provider store={store}>
+        <React.Suspense fallback={<Loading />}>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/*" element={<AppContainer />} />
+            </Routes>
+          </BrowserRouter>
+        </React.Suspense>
+      </Provider>
+      <ToastContainer autoClose={3000} />
+    </ErrorBoundary>
   );
-}
+};
 
 export default App;
