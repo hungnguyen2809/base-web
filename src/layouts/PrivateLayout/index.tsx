@@ -1,5 +1,6 @@
 import { CContainer } from '@coreui/react';
 import Loading from 'components/Loading';
+import routesMap from 'layouts/routesMap';
 import { trim } from 'lodash';
 import React, { useMemo } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
@@ -9,7 +10,6 @@ import AppSidebar from './AppSidebar';
 
 const PrivateLayout: React.FC = () => {
   const isLogged = useMemo(() => {
-    return true;
     return Boolean(trim(getStorageData(STORAGE_KEY.ACCESS_TOKEN)));
   }, []);
 
@@ -28,7 +28,7 @@ const PrivateLayout: React.FC = () => {
       </div>
     </main>
   ) : (
-    <Navigate to={'/'} replace />
+    <Navigate to={routesMap.LOGIN} replace />
   );
 };
 
