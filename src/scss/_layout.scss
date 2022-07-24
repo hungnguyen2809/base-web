@@ -1,0 +1,46 @@
+.wrapper {
+  width: 100%;
+  @include ltr-rtl('padding-left', var(--cui-sidebar-occupy-start, 0));
+  will-change: auto;
+  @include transition(padding 0.15s);
+}
+
+// .sidebar-brand {
+//   background: #f5f6fa;
+//   color: $dark;
+// }
+
+// .sidebar {
+//   background: #fff;
+
+//   .nav-title,
+//   .nav-link {
+//     color: #4a4a4a;
+//   }
+
+//   .nav-title {
+//     background-color: #dfe4ea;
+//     margin-top: 0px;
+//   }
+
+//   .nav-link {
+//     background: #f9f9f9;
+
+//     &:hover {
+//       color: $primary;
+//       background-color: #f5f6fa;
+//     }
+
+//     &.nav-group-toggle::after {
+//       background-image: url('./../assets/icons/icon-arrow.svg') !important;
+//     }
+//   }
+
+//   .nav-group.show .nav-group-toggle {
+//     color: $primary;
+//   }
+
+//   .nav-group.show > .nav-group-toggle::after {
+//     transform: rotate(90deg);
+//   }
+// }

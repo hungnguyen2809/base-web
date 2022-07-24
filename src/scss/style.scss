@@ -1,0 +1,10 @@
+@import 'variables';
+
+$enable-ltr: true;
+$enable-rtl: true;
+
+@import '@coreui/coreui/scss/coreui';
+
+@import 'layout';
+@import 'custom';
+@import './CustomStyles.scss'

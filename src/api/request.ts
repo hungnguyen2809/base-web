@@ -4,7 +4,7 @@ import QueryString from 'qs';
 import { getStorageData, STORAGE_KEY } from 'utils/storage';
 
 axios.defaults.timeout = 15000;
-axios.defaults.timeoutErrorMessage = 'Kết nối không ổn định. Vui lòng thử lại sau';
+axios.defaults.timeoutErrorMessage = 'Mất kết nối. Vui lòng thử lại sau';
 axios.defaults.paramsSerializer = (params): string => QueryString.stringify(params, { indices: false });
 
 const configure = (config: AxiosRequestConfig): AxiosRequestConfig => {

@@ -1,7 +1,7 @@
+import { CAlert, CButton } from '@coreui/react';
 import classNames from 'classnames/bind';
 import routesMap from 'layouts/routesMap';
 import React from 'react';
-import { Alert, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import styles from './Page404.module.scss';
 
@@ -18,9 +18,11 @@ const Page404: React.FC = () => {
     <div className={cx('wrap__page-404')}>
       <div style={{ height: '10%' }} />
       <div className="text-center">
-        <Alert>Trang không tồn tại hoặc bạn không có quyền truy cập !</Alert>
+        <CAlert color="danger">Trang không tồn tại hoặc bạn không có quyền truy cập !</CAlert>
         <div style={{ height: 50 }} />
-        <Button onClick={handleGoHome}>Trang chủ</Button>
+        <CButton onClick={handleGoHome} size="sm">
+          Trang chủ
+        </CButton>
       </div>
     </div>
   );
