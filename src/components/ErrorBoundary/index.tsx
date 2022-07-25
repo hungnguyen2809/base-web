@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { CButton } from '@coreui/react';
+
 import classNames from 'classnames/bind';
 import Loading from 'components/Loading';
 import React, { Component } from 'react';
+import { Button } from 'react-bootstrap';
 import styles from './ErrorBoundary.module.scss';
 
 const cx = classNames.bind(styles);
@@ -41,9 +42,9 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
           <div style={{ height: '10%' }} />
           <div className="text-center">
             <h3>Vui lòng tải lại trang !</h3>
-            <CButton color="primary" onClick={this.handleReloadPage}>
+            <Button color="primary" onClick={this.handleReloadPage}>
               Tải lại
-            </CButton>
+            </Button>
           </div>
         </div>
       );
